@@ -1,3 +1,3 @@
 # python-projects
 
-This file contains the projects made while learnign python 
+This file contains the projects made while learning python 
