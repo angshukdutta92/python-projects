@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Login page</title>
-	<meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
 
 <h1>Please Login</h1>
 
@@ -22,14 +14,4 @@
 
 </form>
 
-{% if error %}
-	<p class="error"><strong>Error: </strong> {{ error }}</p>
-{% endif %}
-
-{% for message in get_flashed_messages() %}
-        {{ message }}
-{% endfor %}
-
-
-</body>
-</html>
+{% endblock %}
