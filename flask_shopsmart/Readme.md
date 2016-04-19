@@ -1,27 +1,32 @@
-This is Python-FLask Project.
+This is <strong> <b>Python-FLask</b></strong> Project.
 It is a <strong>buying and selling</strong> portal .
 
-Functionalities-
-Login-Register functionality preventing CSRF(cross site request forgery ) attacks.
-Buying Portal complete(Yet to be done)
+<h2>Functionalities- </h2>
+<ul>
+<li>Login-Register functionality preventing CSRF(cross site request forgery ) attacks. </li>
+<li>Buying Portal complete(Half done) </li>
+</ul>
 
-Funtionalities to be added-
-<br>
-[1]-Selling portal
+<h3> Funtionalities to be added- </h3>
+<ul>
+<li> [1]-Selling portal </li>
+<li>[2]-Bill generation </li>
+<li>[3]-Checkout and Emailing the Order</li>
+<li>[4]-Direct chatting with client.</li>
+</ul>
 
-[2]-Bill generation
-[3]-Checkout and Emailing the Order
-[4]-Direct chatting with client.
-
-Requirements-
-Pyhton 2.7.10
-Flask
-Flask_wtf
-flask_mail
-sqlalchemy
-Xampp(Mysql)
+<h3> Requirements-</h3>
+<ul>
+<li>Pyhton 2.7.10</li>
+<li>Flask</li>
+<li>Flask_wtf</li>
+<li>flask_mail</li>
+<li>sqlalchemy</li>
+<li>Xampp(Mysql)</li>
+</ul>
 All other the dependencies will be loaded soon.
 
+<h2> Note </h2>
 To run the project download the zip and extract it.
 Then import the shopsmart.sql file in xampp PHPMYADMIN
 And then run the index.py file.
