@@ -29,4 +29,4 @@ All other the dependencies will be loaded soon.
 <h2> Note </h2>
 To run the project download the zip and extract it.<br>
 Then import the shopsmart.sql file in xampp PHPMYADMIN<br>
-And then run the index.py file.
+And then run the <b>index.py</b> file.
