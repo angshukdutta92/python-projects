@@ -1,12 +1,14 @@
 This is Python-FLask Project.
-It is a buying and selling portal .
+It is a <strong>buying and selling</strong> portal .
 
 Functionalities-
 Login-Register functionality preventing CSRF(cross site request forgery ) attacks.
 Buying Portal complete(Yet to be done)
 
-Funtionalitiesto be added-
+Funtionalities to be added-
+<br>
 [1]-Selling portal
+
 [2]-Bill generation
 [3]-Checkout and Emailing the Order
 [4]-Direct chatting with client.
