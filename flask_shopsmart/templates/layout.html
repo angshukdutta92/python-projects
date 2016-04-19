@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		{% block title %}
+		{% endblock %}
+	</title>
+
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	  <link rel="stylesheet" href='{{ url_for('static', filename='css/index.css') }}'>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+
+<!-- header part of the website -->
+<div class="header_web">
+ 	
+<!-- adding the login facitlity -->
+
+	<div class="container">
+		<div class="row" style="margin-top:15px;">
+			<div class="col-md-10">
+			<a href='{{ url_for('home') }}'><img src="../../../../static/img/shopsmart_logo.PNG"></a>
+
+			</div>
+			<div class="col-md-1">
+				<button type="button" class="btn btn-default btn-lg change" style="border:2px black solid;" onclick="location.href='{{url_for('signin')}}'"><b>Login</b></button>
+			</div>
+
+			<div class="col-md-1">
+				<button type="button" class="btn btn-default btn-lg change" style="border:2px black solid;" onclick="location.href='{{url_for('signup')}}'"><b>Register</b></button>
+			</div>
+	
+		</div>
+	</div>
+
+	<hr style="border:1.3px black solid">	
+
+ 	<div class="container" style="background:url('../../../../../static/background2.jpg');">
+	 	<div class="website_name" >
+	 			<h1 align="center" style="margin-top:50px; font-size:75px;font-family:monospace;"><b>ShopSmart</b></h1>
+	 	</div>
+ 	</div>
+ 	<hr style="border:1.3px black solid;">
+</div>
+
+<!--Displaying all the categories-->
+<div class="container">
+
+	<div class="row">
+
+		<div class="col-sm-3 cat_display">
+			<ul class="nav nav-pills nav-stacked">
+			  <li><h2>&nbspCategories</h2></li>
+			  {% block body1 %}
+
+			  {% endblock %}
+			</ul>	
+		</div>
+		
+		<div class="col-sm-9 col-md-9">
+			
+		<!-- middle part -->
+			{% block body2 %}
+				<!-- <h1>This is heading defined in the parent html</h1> -->
+			{% endblock %}
+		<!-- end the middle part -->
+		</div>
+
+	</div>
+	
+</div>
+ 
+ <a href='{{ url_for('test') }}'>Test </a>
+
+<hr style="border:1.3px black solid; margin-top:50px">
+    <!-- this is footer part of the main website  -->
+
+    <div class="container footer">
+    	
+	    <div class="row">
+	    	
+		    <div class="col-md-4">
+		    	<h3><b><span style="color:#ffcc2a"><u>Information</u></span></u></b></h3>
+		    	<ul class="list-group">
+		    		<li class="list-group-item"><a href="#">About Us</a></li>
+		    		<li class="list-group-item"><a href="shipping_return.html">Shipping And Return</a></li>
+		    		<li class="list-group-item"><a href="#">Payment Methods</a></li>
+		    	</ul>
+		    </div>
+
+			<div class="col-md-4">
+		    	<h3><b><span style="color:#ffcc2a"><u>Contact Us</u></span></u></b></h3>
+		         <ul class="list-group">
+		           <li class="list-group-item">
+		              <a>
+		               <h4><span class="glyphicon glyphicon-earphone">91-9135124578</span></h4>
+		              </a>
+		              <tr>
+		            </li>
+
+		            <li class="list-group-item">
+		               <a href="#">
+		               <h4> <span class="glyphicon glyphicon-envelope" >&nbspconnect@shopmart.com</span></h4>
+		              </a>
+		            </li>
+		         </ul>
+
+		    </div>
+
+		    <div class="col-md-4">
+		    	
+	    	<h3>
+			    <b><span style="color:#ffcc2a"><u>Follow Us</u></span></b>
+			          &nbsp&nbsp&nbsp
+			         <a href="https://www.facebook.com/ledMart.india" ><img src="../../../../../static/img/webicon-facebook-m.png" alt="ShopSmart"></a>
+			         <a href="https://twitter.com/ledmartindia"><img src="../../../../../static/img/webicon-twitter-m.png" alt="Shopsmart"></a>
+      
+	        </h3>
+	        <img src="../../../../../static/img/shopsmart_logo.PNG" style="margin-top:20px;margin-left:70px;">
+
+		    </div>					    
+
+	    </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends "base_forms.html" %}
+
+{% block content %}
+	
+	<div class="jumbotron">
+		<h1>This is profile page</h1>
+	</div>
+	<h3>This is {{ session['email'] }} profile's page</h3>
+	<h3><a href='{{ url_for('signout') }}'>Signout</a></h3>
+
+
+{% endblock %}
