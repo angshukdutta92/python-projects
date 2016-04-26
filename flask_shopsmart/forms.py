@@ -15,6 +15,7 @@ class SignupForm(Form):
 	lastname=TextField("Last name", [validators.Required("please enter your last name")])
 	email=TextField("email",[validators.Required("Please enter your email"),validators.Email("Please enter valid emiail address")])
 	password=PasswordField('password',[validators.Required("Please enter a password")])
+	address=TextAreaField("Adress",[validators.Required("Please enter your Address")])
 	submit=SubmitField("Creat Account")
 
 	def __init__(self,*args,**kwargs):
@@ -32,8 +33,8 @@ class SignupForm(Form):
 			return True
 
 class SigninForm(Form):
-	email=TextField("email", [validators.Required("Please enter the email address"),validators.Email("This email address is not valid")])
-	password=PasswordField('password',[validators.Required('Please enter the password')])
+	email=TextField("Email", [validators.Required("Please enter the email address"),validators.Email("This email address is not valid")])
+	password=PasswordField('Password',[validators.Required('Please enter the password')])
 	submit=SubmitField("Sign In")
 
 	def __init__(self,*args,**kwargs):

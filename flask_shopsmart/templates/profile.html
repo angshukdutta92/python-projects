@@ -2,11 +2,37 @@
 
 {% block content %}
 	
-	<div class="jumbotron">
-		<h1>This is profile page</h1>
+	<div class="container">
+		<div class="jumbotron">
+			<div class="col-md-9">
+				<h4>Welcome {{session['email']}}....!!!</h4>	
+			</div>
+			<div class="col-md-3">
+				<a href='{{ url_for('signout') }}' class="btn btn-info" role="button">Signout</a>
+			</div>
+			
+		</div>		
 	</div>
-	<h3>This is {{ session['email'] }} profile's page</h3>
-	<h3><a href='{{ url_for('signout') }}'>Signout</a></h3>
+
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-md-4">
+				<ul class="nav nav-pills nav-stacked">
+				  <li><a href='{{url_for('profileHome')}}'>Home</a></li>
+				  <li><a href='{{url_for('profileDetails')}}'>Personal Details</a></li>
+				  <li><a href='{{url_for('sellItem')}}'>Sell Your Item</a></li>
+				</ul>				
+			</div>
+
+			<div class="col-md-8">
+				{% block content1 %}
+				{% endblock %}
+			</div>
+
+		</div>
+	</div>
+	
 
 
 {% endblock %}

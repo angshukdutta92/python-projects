@@ -17,40 +17,57 @@
 <body>
 
 
-<!-- header part of the website -->
-<div class="header_web">
- 	
-<!-- adding the login facitlity -->
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-	<div class="container">
-		<div class="row" style="margin-top:15px;">
-			<div class="col-md-10">
-			<a href='{{ url_for('home') }}'><img src="../../../../static/img/shopsmart_logo.PNG"></a>
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container">
+	    
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>                        
+	      </button>
+	      <a href='{{ url_for('home') }}' style="margin-top:15px;"><img src="../../../../static/img/shopsmart_logo.PNG"></a>
+	    </div>
 
-			</div>
-			<div class="col-md-1">
-				<button type="button" class="btn btn-default btn-lg change" style="border:2px black solid;" onclick="location.href='{{url_for('signin')}}'"><b>Login</b></button>
-			</div>
+	    <div class="collapse navbar-collapse" id="myNavbar">
+	      <ul class="nav navbar-nav navbar-right">
+	        <li style="margin-top:15px;">
+	        <button type="button" class="btn btn-default btn-md change" onclick="location.href='{{url_for('signin')}}'"><b>Login</b></button>
+	        </li>
+	        <li style="margin-left:35px; margin-top:15px;">
+	        <button type="button" class="btn btn-default btn-md change" onclick="location.href='{{url_for('signup')}}'"><b>Register</b></button></li>
+	        
+	        <li style="margin-left:35px; margin-top:15px;">
+	        <button type="button" class="btn btn-default btn-md change" onclick="location.href='{{url_for('showCart')}}'">
+	        <b>Cart</b>
+				{% if session['email'] %}
+					<p>{{ session['email'] }}</p>
+				{% endif %}
+				</button>
+			</li>
 
-			<div class="col-md-1">
-				<button type="button" class="btn btn-default btn-lg change" style="border:2px black solid;" onclick="location.href='{{url_for('signup')}}'"><b>Register</b></button>
-			</div>
-	
-		</div>
+	      </ul>
+	    </div>
+
+	  </div>
+	</nav>
+
+	<div class="jumbotron text-center">
+	  <h1>ShopSmart</h1> 
+	  <p>An e-commerce platform</p>
+	  <button type="submit" class="btn btn-danger">Start Shopping</button>
 	</div>
-
-	<hr style="border:1.3px black solid">	
-
- 	<div class="container" style="background:url('../../../../../static/background2.jpg');">
-	 	<div class="website_name" >
-	 			<h1 align="center" style="margin-top:50px; font-size:75px;font-family:monospace;"><b>ShopSmart</b></h1>
-	 	</div>
- 	</div>
- 	<hr style="border:1.3px black solid;">
-</div>
-
 <!--Displaying all the categories-->
 <div class="container">
+
+	<div class="row">
+		<div class="col-md-9">
+			{% block flashMessages %}
+			{% endblock %}
+		</div>
+	</div>
 
 	<div class="row">
 
@@ -76,7 +93,6 @@
 	
 </div>
  
- <a href='{{ url_for('test') }}'>Test </a>
 
 <hr style="border:1.3px black solid; margin-top:50px">
     <!-- this is footer part of the main website  -->

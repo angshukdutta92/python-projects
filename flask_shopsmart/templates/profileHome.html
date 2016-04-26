@@ -1,0 +1,25 @@
+{% extends "profile.html" %}
+
+{% block content1 %}
+	
+	<div class="table-responsive">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Date of Buying</th>
+					<th>Buying Cost</th>
+				</tr>
+
+				<tbody>
+					{% for data in userData %}
+						<tr>
+							<td>{{ data.date_added }}</td>
+							<td>{{ data.amount }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</thead>
+		</table>
+	</div>
+	
+{% endblock %}

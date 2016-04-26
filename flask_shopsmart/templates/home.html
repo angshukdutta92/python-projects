@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	 <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+	  <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	  <style type="text/css">
+
+	  body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+	  }
+	  h2 {
+	      font-size: 24px;
+	      text-transform: uppercase;
+	      color: #303030;
+	      font-weight: 600;
+	      margin-bottom: 30px;
+	  }
+	  h4 {
+	      font-size: 19px;
+	      line-height: 1.375em;
+	      color: #303030;
+	      font-weight: 400;
+	      margin-bottom: 30px;
+	  }  
+	  .jumbotron {
+	      background-color: #f4511e;
+	      color: #fff;
+	      padding: 100px 25px;
+	      font-family: Montserrat, sans-serif;
+	  }
+
+	  	.navbar {
+      margin-bottom: 0;
+      background-color: #f4511e;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+	  }
+	  .navbar li a, .navbar .navbar-brand {
+	      color: #fff !important;
+	  }
+	  .navbar-nav li a:hover, .navbar-nav li.active a {
+	      color: #f4511e !important;
+	      background-color: #fff !important;
+	  }
+	  .navbar-default .navbar-toggle {
+	      border-color: transparent;
+	      color: #fff !important;
+	  }
+
+	  </style>
+
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container">
+	    
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>                        
+	      </button>
+	      <a href='{{ url_for('home') }}' style="margin-top:15px;"><img src="../../../../static/img/shopsmart_logo.PNG"></a>
+	    </div>
+
+	    <div class="collapse navbar-collapse" id="myNavbar">
+	      <ul class="nav navbar-nav navbar-right">
+	        <li style="margin-top:15px;">
+	        <button type="button" class="btn btn-default btn-md change" onclick="location.href='{{url_for('signin')}}'"><b>Login</b></button>
+	        </li>
+	        <li style="margin-left:35px; margin-top:15px;">
+	        <button type="button" class="btn btn-default btn-md change" onclick="location.href='{{url_for('signup')}}'"><b>Register</b></button></li>
+	        
+	        <li style="margin-left:35px; margin-top:15px;">
+	        <button type="button" class="btn btn-default btn-md change" onclick="location.href='{{url_for('showCart')}}'">
+	        <b>Cart</b>
+				{% if session['email'] %}
+					<p>{{ session['email'] }}</p>
+				{% endif %}
+				</button>
+			</li>
+
+	      </ul>
+	    </div>
+
+	  </div>
+	</nav>
+
+	<div class="jumbotron text-center">
+	  <h1>ShopSmart</h1> 
+	  <p>An e-commerce platform</p>
+	  <button type="submit" class="btn btn-danger">Start Shopping</button>
+	</div>
+</body>
+</html>

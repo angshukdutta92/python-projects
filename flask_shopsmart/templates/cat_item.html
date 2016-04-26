@@ -4,8 +4,22 @@
 {% endblock %}
 
 
+{% block flashMessages %}
+
+	{% for messages in get_flashed_messages() %}
+			<div class="container">
+				<div class="alert alert-success fade-in">
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					<strong>{{ messages }}</strong>
+				</div>
+			</div>
+	{% endfor %}
+
+{% endblock %}
+
 <!-- body for displaying the category menu -->
 {% block body1 %}
+	
 	{% for i in categories %}
 		<li><a href='{{url_for('viewProduct',cat_id=i.id)}}'>{{ i.name }}</a></li>
 		<!-- <li>{{i.name}}</li> -->
@@ -26,12 +40,15 @@
 
 		{% if count<=3 and count!=0 %}
 			<div class="col-md-3 item_box">
-				<ul>Name: {{ i.name }}</ul>
-				<ul>Item-id:{{ i.item_id }}</ul>
-				<ul>Price: {{ i.price }}</ul>
+				<ul><b>Name</b>: {{ i.name }}</ul>
+				<ul><b>Item-id</b>:{{ i.item_id }}</ul>
+				<ul><b>Price</b>: {{ i.price }}</ul>
+				{% if i.seller!=None %}
+				<ul><b>Seller</b>: <a href="{{url_for('sendMessage',sendTo=i.seller)}}">{{i.seller}}</a></ul>
+				{% endif %}
 				<ul>
 					<form action='{{url_for('addToCart',item_id=i.item_id)}}' method="POST">
-						<input type="submit" name="submit">
+						<input type="submit" name="submit" value="Add to Cart">
 					</form>
 				</ul>
 			</div>

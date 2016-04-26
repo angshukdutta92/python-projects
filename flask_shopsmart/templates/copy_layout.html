@@ -1,66 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Base class of forms</title>
-	 <meta charset="utf-8">
+	<title>
+		{% block title %}
+		{% endblock %}
+	</title>
+
+	  <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	  <link rel="stylesheet" href='{{ url_for('static', filename='css/index.css') }}'>
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
 </head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<body>
+
 
 <!-- header part of the website -->
-<nav class="navbar navbar-default navbar-fixed-top">
-	  <div class="container">
-	    
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>                        
-	      </button>
-	      <a href='{{ url_for('home') }}' style="margin-top:15px;"><img src="../../../../static/img/shopsmart_logo.PNG"></a>
-	    </div>
+<div class="header_web">
+ 	
+<!-- adding the login facitlity -->
 
-	    <div class="collapse navbar-collapse" id="myNavbar">
-	      <ul class="nav navbar-nav navbar-right">
-	        <li style="margin-top:15px;">
-	        <button type="button" class="btn btn-default btn-md change" onclick="location.href='{{url_for('signin')}}'"><b>Login</b></button>
-	        </li>
-	        <li style="margin-left:35px; margin-top:15px;">
-	        <button type="button" class="btn btn-default btn-md change" onclick="location.href='{{url_for('signup')}}'"><b>Register</b></button></li>
-	        
-	        <li style="margin-left:35px; margin-top:15px;">
-	        <button type="button" class="btn btn-default btn-md change" onclick="location.href='{{url_for('showCart')}}'">
-	        <b>Cart</b>
+	<div class="container">
+		<div class="row" style="margin-top:15px;">
+			<div class="col-md-6">
+			<a href='{{ url_for('home') }}'><img src="../../../../static/img/shopsmart_logo.PNG"></a>
+			</div>
+			<div class="col-md-1">
+				<button type="button" class="btn btn-default btn-md change" onclick="location.href='{{url_for('signin')}}'"><b>Login</b></button>
+			</div>
+
+			<div class="col-md-1">
+				<button type="button" class="btn btn-default btn-md change" onclick="location.href='{{url_for('signup')}}'"><b>Register</b></button>
+			</div>
+
+			<div class="col-md-1">
+				<button type="button" class="btn btn-default btn-md change" onclick="location.href='{{url_for('showCart')}}'"><b>Cart</b>
 				{% if session['email'] %}
 					<p>{{ session['email'] }}</p>
 				{% endif %}
 				</button>
-			</li>
+			</div>
 
-	      </ul>
-	    </div>
-
-	  </div>
-	</nav>
-
-	<div class="jumbotron text-center">
-	  <h1>ShopSmart</h1> 
-	 </div>
+	
+		</div>
+	</div>
 
 	<hr style="border:1.3px black solid">	
+
+ 	<div class="container" style="background:url('../../../../../static/background2.jpg');">
+	 	<div class="website_name" >
+	 			<h1 align="center" style="margin-top:50px; font-size:75px;font-family:monospace;"><b>ShopSmart</b></h1>
+	 	</div>
+ 	</div>
+ 	<hr style="border:1.3px black solid;">
 </div>
 
+<!--Displaying all the categories-->
+<div class="container">
 
-<!-- middle part- this part contains the form -->
+	<div class="row">
+		<div class="col-md-9">
+			{% block flashMessages %}
+			{% endblock %}
+		</div>
+	</div>
 
-{% block content %}
-{% endblock %}
+	<div class="row">
 
-<!-- end of the form -->
+		<div class="col-sm-3 cat_display">
+			<ul class="nav nav-pills nav-stacked">
+			  <li><h2>&nbspCategories</h2></li>
+			  {% block body1 %}
+
+			  {% endblock %}
+			</ul>	
+		</div>
+		
+		<div class="col-sm-9 col-md-9">
+			
+		<!-- middle part -->
+			{% block body2 %}
+				<!-- <h1>This is heading defined in the parent html</h1> -->
+			{% endblock %}
+		<!-- end the middle part -->
+		</div>
+
+	</div>
+	
+</div>
+ 
 
 <hr style="border:1.3px black solid; margin-top:50px">
     <!-- this is footer part of the main website  -->

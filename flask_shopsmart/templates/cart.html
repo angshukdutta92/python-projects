@@ -1,10 +1,49 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Cart</title>
-</head>
-<body>
-	<h1> {{ passed }}</h1>
+{% extends "base_forms.html" %}
 
-</body>
-</html>
+{% block content %}
+
+	<div class="container">
+	<h1><b>Shopping Cart</b></h1>
+	<hr>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Price(per Item)</th>
+					<th>Quantity</th>
+					<th>Total Price</th>
+					<th>Action</th>
+				</tr>
+				<tbody>
+					{% for item in cart_item %}
+						<tr>
+							<td>{{item.name}}</td>
+							<td>{{item.price}}</td>
+							
+							<form action='{{url_for('updateQuantity',item_id=item.sel_item_id)}}' method="POST">
+
+							<td><input type="text" name="quantity" value="{{item.sel_item_qty}}" size="5"></td>
+							<td>{{ item.price*item.sel_item_qty }}</td>
+							<td>
+								<button type="submit" class="btn btn-warning">Update Quantity</button>
+							</form>
+							/
+							<button class="btn btn-danger" onclick="location.href='{{url_for('removeItemFromCart',item_id=item.sel_item_id)}}'">Remove Item</button>
+							</td>
+						</tr>
+					{% endfor %}
+						<tr>
+							<td colspan="3"><b>Total:</b></td>
+							<td><strong>Rs.{{total}}</strong></td>
+						</tr>
+				</tbody>
+			</thead>
+			</table>			
+		</div>
+
+		<button class="btn btn-lg btn-success" onclick="location.href='{{url_for('checkout')}}'">Checkout</button>
+		<button class="btn btn-lg btn-info" onclick="location.href='{{url_for('home')}}'">Continue Shopping</button>	
+	</div>
+	
+{% endblock %}

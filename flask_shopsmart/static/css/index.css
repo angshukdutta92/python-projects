@@ -3,11 +3,15 @@
 	background-color: white;
 }
 
+.change
+{
+	margin-left: 15px;
+	border: 2px solid black;
+}
 .btn-default:hover
 {
 	border: 1px red solid;
 }
-
 
 #check
 {
@@ -25,7 +29,13 @@
 	padding-top: 30px;
 	margin-left: 30px;
 	margin-top: 30px;
+	max-width: 350px;
+	max-height: 250px;
 	border: 1px solid black;
+}
+.item_box:hover
+{
+	border: 3px solid black;
 }
 
 .footer li a:hover
@@ -56,3 +66,64 @@ form input#password {
   padding: 10px;
   width: 400px;
 }
+.customer
+{
+	border: 1px solid black;
+	
+}
+
+/*ProfileSetails.html page designing */
+.profile-data input value
+{
+	font-weight: bold;
+}
+
+
+body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+	  }
+	  h2 {
+	      font-size: 24px;
+	      text-transform: uppercase;
+	      color: #303030;
+	      font-weight: 600;
+	      margin-bottom: 30px;
+	  }
+	  h4 {
+	      font-size: 19px;
+	      line-height: 1.375em;
+	      color: #303030;
+	      font-weight: 400;
+	      margin-bottom: 30px;
+	  }  
+	  .jumbotron {
+	      background-color: #f4511e;
+	      color: #fff;
+	      padding: 100px 25px;
+	      font-family: Montserrat, sans-serif;
+	  }
+
+	  	.navbar {
+      margin-bottom: 0;
+      background-color: #f4511e;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+	  }
+	  .navbar li a, .navbar .navbar-brand {
+	      color: #fff !important;
+	  }
+	  .navbar-nav li a:hover, .navbar-nav li.active a {
+	      color: #f4511e !important;
+	      background-color: #fff !important;
+	  }
+	  .navbar-default .navbar-toggle {
+	      border-color: transparent;
+	      color: #fff !important;
+	  }
